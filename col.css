@@ -1,0 +1,45 @@
+body{
+  align: center;
+}
+ul{
+
+  background-color: black;
+height: 135;
+}
+li{
+  display: inline;
+
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 100;
+  margin:auto;
+
+
+  }
+ul #life a:hover{
+  font-size: 125;
+  color:green;
+  padding-left: 100px;
+    height: 150px;
+
+}
+ul #is a:hover{
+  font-size: 125;
+  color: red;
+  height: 150px;
+    height: 150px;
+}
+ul #filled a:hover{
+  font-size: 125;
+  color: blue;
+}
+ul #with a:hover{
+  font-size: 125;
+  color: orange;
+}
+ul #colours a:hover{
+  font-size: 125;
+  color: yellow;
+}
