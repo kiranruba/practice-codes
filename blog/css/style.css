@@ -1,0 +1,102 @@
+
+body{
+  font-family:  'Indie Flower', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+    background-color: #ACE894;
+  }
+  #about{
+  float: right;
+  padding-right: 5%;
+font-family: 'Indie Flower', cursive;
+  color: #4169e1;
+  font-size: 21px;
+}
+
+#logo img{
+  margin-top: 0%;
+
+}
+
+#navi{
+  background-color:  #00e6e6;
+  color: #4169e1;
+}
+
+#welcome{
+  width: 100%;
+
+  margin-top: 0%;
+  margin-left: 0%;
+}
+.carousel-inner
+{
+  background-color:  #54F2F2;
+
+
+}
+#drop{
+  font-family: 'Indie Flower', cursive;
+    color: #4169e1;
+    font-size: 20px;
+}
+#drophe{
+  font-family: 'Indie Flower', cursive;
+    color: #4169e1;
+  font-weight: bolder;
+    font-size: 23px;
+}
+#main{
+margin-top: 1%;
+  background-color:  #54F2F2;
+
+}
+#posts{
+  font-family: 'Indie Flower', cursive;
+    color: #4169e1;
+    font-size: 29px;
+    font-weight: bolder;
+}
+h3
+{
+  font-family: 'Indie Flower', cursive;
+    color: #4169e1;
+    font-size: 35px;
+    font-weight: bolder;
+    background-color: #00e6e6;
+    }
+.list-group-item{
+  background-color: #69D1C5;
+}
+.list-group-item.active {
+color: #4169e1;
+font-size: 30px;
+
+  background-color:#69D1C5;
+}
+
+.list-group a .list-group-item.active h4 .list-group-item-heading{
+  font-size: 20px;
+}
+
+.list-group-item.active p.list-group-item-text{
+color:#090909;
+font-size: 20px;}
+blockquote{
+  margin-top: 7%;
+  font-family: 'Indie Flower', cursive;
+    color: #4169e1;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-left: 35%;
+    background-color: #D3FFE9;
+
+}
+h6,h4{
+  font-size: 25px;
+}
+footer
+{
+  background-color:  #00e6e6;
+  color: #4169e1;
+}

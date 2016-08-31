@@ -1,0 +1,11 @@
+<form name="myform">
+  Year:<input name="year"type="text" ng-model="newyear"ng-required="true" ng-pattern="/^1[9]4[7-9]$|1[9][5-9][0-9]$/">
+<p ng-show="myform.year.$invalid"ng-hide="myform.year.$pristine">Enter valid number only</p><br><br>
+  Below 500:<input name="bel500"type="text" ng-model="newbel"ng-required="true" ng-pattern="/^[0-9]$|[1-9][0-9]$|[1-9][0-9][0-9]$|[1-9][0-9][0-9][0-9]$|[1-9][0-9][0-9][0-9][0-9]$|100000$/">
+    <p ng-show="myform.bel500.$invalid"ng-hide="myform.bel500.$pristine">Enter valid number only</p><br><br>
+    Above 500:<input  name="abv500"type="text" ng-model="newabv"ng-required="true" ng-pattern="/^[0-9]$|[1-9][0-9]$|[1-9][0-9][0-9]$|[1-9][0-9][0-9][0-9]$|[1-9][0-9][0-9][0-9][0-9]$|100000$/">
+  <p ng-show="myform.abv500.$invalid" ng-hide="myform.abv500.$pristine">Enter valid number only</p><br><br>
+  <button ng-click="crime[total].year=newyear;crime[total].over500=newabv;crime[total].under500=newbel;count=count+1;total=tot+count;"ng-init="count=0">Add</button>
+
+
+</form>

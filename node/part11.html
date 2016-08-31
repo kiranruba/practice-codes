@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" >
+<style>
+</style>
+<body>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+<svg id="cont" width="1100" height="800"></svg>
+d3.json("part1.json", function(data) {
+
+
+var ext1 = d3.extent(data, function(d) { return d.UP; });
+console.log(ext1);
+var ext2 = d3.extent(data, function(d) { return d.RP; });
+console.log(ext2);
+var min = ext1[0]<ext2[0]?ext1[0]:ext2[0];
+var max = ext1[1]>ext2[1]?ext1[1]:ext2[1];
+console.log(min);
+console.log(max);
+var vis = d3.select("#cont"),
+    width =1100,
+    height = 500,
+    margin = {top: 20,right: 20,bottom: 20,left: 230},
+
+    xScale = d3.scale.linear()
+                     .range([margin.left, width - margin.right])
+                     .domain(d3.extent(data.map(function(datum){return datum.Year}))),
+    yScale = d3.scale.linear().range([height - margin.top, margin.bottom]).domain([0,100]);
+
+    xAxis = d3.svg.axis().scale(xScale),
+    yAxis = d3.svg.axis().scale(yScale);
+    vis.append("text")
+         .attr("x", 650 )
+         .attr("y", 550 )
+         .style("text-anchor", "middle")
+         .attr("font-size",22)
+         .text("Year");
+
+    vis.append("text")
+         .attr("x", -250 )
+         .attr("y", 150 )
+         .style("text-anchor", "middle")
+         .attr("transform", "rotate(-90)")
+         .attr("font-size",22)
+         .text("% of population");
+
+    vis.append("g")
+          .attr("transform", "translate(0," + (height - 20) + ")")
+          .call(xAxis);
+
+
+    yAxis = d3.svg.axis()
+          .scale(yScale)
+          .orient("left");
+
+
+    vis.append("g")
+        .attr("transform", "translate(" + (margin.left) + ",0)")
+        .call(yAxis)
+        var lineGen = d3.svg.line()
+            .x(function(d){return xScale(d.Year);})
+            .y(function(d){return yScale(d.Value);})
+
+            vis.append('path')
+                .attr('d', lineGen(data.UP))
+                .attr('stroke', 'red')
+                .attr('stroke-width', 2)
+                .attr('fill', 'none');
+
+            vis.append('path')
+                .attr('d', lineGen(data.RP))
+                .attr('stroke', 'blue')
+                .attr('stroke-width', 2)
+                .attr('fill', 'none');
+                vis.append('text')
+                    .attr('fill', 'black')
+                    .attr("x", 600 )
+                    .attr("y", 50 )
+                    .text("Rural(Blue)");
+
+
+                vis.append('text')
+                    .attr('fill', 'black')
+                    .attr("x", 750 )
+                    .attr("y", 50 )
+                    .text("Urban (red)");
+
+});
+
+
+
+
+</script>

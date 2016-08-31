@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="crime">
+<head>
+  <meta charset="UTF-8">
+  <title>crime-chicago</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="crimedata/crimedata.template.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="mytable.html"></script>
+<script src="myform.html"></script>
+<script src="search.filter.js"></script>
+
+<style>
+
+table{background:#fff;border:1px solid #000; align-content:  center;}
+table td{padding:15px;border:.5px solid #DDD;}
+
+</style>
+</head>
+<body ng-controller="crimed"  align=center >
+<div ngview>
+<h1><a href="#home">Crime Chicago</h1></div></a>
+<p>
+      Filter by:
+      <select ng-model="$scope.sort" value="year" ng-init="$scope.sort='year'">
+        <option value="year">year</option>
+        <option value="under500">Under 500</option>
+        <option value="over500">Over 500</option>
+      </select>
+
+    </p>
+    <p>
+
+       <input ng-model="$scope.box">
+       <button ng-click="fillt=$scope.box;count=0;" ng-init="fillt=0;">
+
+
+  Filter
+</button>
+<p mytable>
+</p>
+
+       <button  ng-repeat="i in crime | limitTo:round(total,need)" ng-click="buttonCount($index)" > {{$index +1}}
+</button>
+</p>
+<p myform>
+</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form>
+      <input type="button" id = "btn" value="Add" />
+</form>
+    <script src=https://code.jquery.com/jquery-3.1.0.min.js></script>
+    <script>
+function newTable1(){
+    var table = $('<table></table>').addClass('foo');
+
+for(i=0; i<1; i++){
+    var row = $('<tr></tr>').addClass('bar');
+    var cell1=$('<td>');
+    var input=$('<input></input>').attr({type:'text', id:"id1"+i});
+    var cell2=$('<td>');
+    var input2=$('<input></input>').attr({type:'text', id:"id2"+i});
+    var cell3=$('<td>');
+    var label=$('<label/>').text('Row'+i);
+    var cell4=$('<td>');
+    var delButton=$('<input>').attr({type:'button', id:"id3"+i, value:'Delete'});
+
+    cell3.append(label);
+    row.append(cell3);
+    cell1.append(input);
+    row.append(cell1);
+    cell2.append(input2);
+    row.append(cell2);
+    cell4.append(delButton);
+    row.append(cell4);
+    table.append(row);
+}
+
+$('.btn').append(table);
+}﻿
+</script>

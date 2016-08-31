@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>
+      Crime Chicago</h1>
+<input type="button" id = "btn" value="Add" />
+
+  <p>ohhh</p>
+      <script src=https://code.jquery.com/jquery-3.1.0.min.js></script>
+      <script>
+      var crime={};
+
+
+
+
+$.getJSON( "crime.json", function( data ) {
+    $.each( data, function( i, val ) {
+          crime[i+1]=val;
+
+      });
+console.log(data);
+console.log(crime);
+var dtab=$(#hi).append("<table> </table>");
+$( document ).ready("dtab");
+});
+
+
+</script>
+<div id="hi">
+</div>
+<table>
+<tr>
+<th>helo</th>
+</tr>
+</table>
+</html>

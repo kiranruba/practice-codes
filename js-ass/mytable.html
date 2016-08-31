@@ -1,0 +1,31 @@
+<table align='center' ng-init="sortType = 'year';" ng-view>
+  <tr>
+    <th><a href="#" ng-click="sortType = 'year'; sortOrder = !sortOrder">Year<span ng-show="sortType == 'year' && !sortOrder" class="fa fa-caret-down"></span>
+           <span ng-show="sortType == 'year' && sortOrder" class="fa fa-caret-up"></span>
+         </a></th>
+    <th><a href="#under500" ng-click="sortType = 'under500'; sortOrder = !sortOrder">under500  <span ng-show="sortType == 'under500' && !sortOrder" class="fa fa-caret-down"></span>
+           <span ng-show="sortType == 'under500' && sortOrder" class="fa fa-caret-up"></span>
+         </a></th>
+    <th><a href="#over500" ng-click="sortType = 'over500'; sortOrder = !sortOrder">over500<span ng-show="sortType == 'over500' && !sortOrder" class="fa fa-caret-down"></span>
+           <span ng-show="sortType == 'over500' && sortOrder" class="fa fa-caret-up"></span>
+         </a></th>
+    <th>Edit {{sortType}} </th>
+  </tr>
+  <tr ng-repeat="i in crime|searchfil:$scope.sort:fillt:emp:this|orderBy:sortType:sortOrder |limitTo:need:count">
+
+  <td >
+    {{i.year}}
+  </td>
+  <td >
+    {{i.under500}}
+  </td>
+  <td >
+    {{i.over500}}
+  </td>
+  <td >
+    <button ng-click="val((crime.indexOf(i)));">Delete</button>
+  </td>
+
+</tr>
+
+</table>
